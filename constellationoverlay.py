@@ -28,7 +28,7 @@ Dependencies:
   pip install astropy numpy
 """
 
-from __future__ import annotations
+#from __future__ import annotations
 import argparse, json, math, os
 from datetime import datetime, timezone
 from typing import Dict, List, Tuple
