@@ -1,238 +1,207 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-ConstellationOverlay — generator with ICRS centroid and optional hourly Earth sub-point footprints.
+ConstellationOverlay — GitHub-ready generator (no previews)
 
-What it does
-------------
-- Outputs a JSON overlay for constellations (and optional asterisms).
-- For each item, includes:
-    * "icrs": {"ra_deg": <float>, "dec_deg": <float>}
-    * Optional "footprint": hourly sub-point (lat/lon) for selected UTC hours on snapshot date
-    * "center": legacy key (sub-point at snapshot UTC hour, see --center-hour)
-    * "radiusMeters": preserved for backward compatibility (configurable via --radius-meters)
-    * "meta": preserved, includes name and type ("constellation" or "asterism")
+Generates an overlay JSON that places each IAU constellation at the Earth
+sub-point (directly-overhead point) for a given UTC snapshot, and ALSO
+adds its ICRS centroid so clients can draw “My Sky” arcs on-device.
 
-CLI
----
-Examples:
+Usage:
   python constellationoverlay.py
-  python constellationoverlay.py --snapshot-utc 2025-10-10T03:00:00Z --footprints --hours "16,17,18,19,20,21,22,23,0,1,2,3"
-  python constellationoverlay.py --include-asterisms --out out/overlay.json
+  python constellationoverlay.py --snapshot-utc 2025-10-10T03:00:00Z --include-asterisms
+  python constellationoverlay.py --ra-step 6 --dec-step 6 --out out/overlay.json
 
-Key flags:
-  --footprints               Toggle hourly sub-point footprints (default: off)
-  --hours "h1,h2,..."        Comma list of UTC hours to include in footprint (default: 0..23)
-  --snapshot-utc ISO         Snapshot timestamp (default: now, rounded down to the hour)
-  --center-hour H            Which UTC hour to use for the legacy "center" (default: first in hours list)
-  --radius-meters N          Legacy radiusMeters value (default: 150000.0)
-  --include-asterisms        Include asterisms from the catalog (default: false)
-  --out PATH                 Output JSON file (default: ./overlay.json)
-
-Catalog
--------
-Replace/extend CATALOG with your true constellation/asterism centroids (ICRS RA/Dec in degrees).
+Deps:
+  pip install astropy numpy
 """
 
-from __future__ import annotations
-import json, math, argparse, os
-from datetime import datetime, timedelta, timezone
-from typing import List, Dict, Any
+import argparse, json, os
+from datetime import datetime, timezone
+from typing import Dict, List, Tuple, Optional
 
-# --- Demo catalog -------------------------------------------------------------
-# Replace this with your actual catalog or wire up a loader.
-CATALOG: List[Dict[str, Any]] = [
-    {"name": "Orion", "type": "constellation", "ra_deg": 83.0, "dec_deg": -5.0},
-    {"name": "Ursa Major", "type": "constellation", "ra_deg": 165.0, "dec_deg": 55.0},
-    {"name": "Big Dipper", "type": "asterism", "ra_deg": 165.0, "dec_deg": 55.0},
+import numpy as np
+import astropy.units as u
+from astropy.coordinates import SkyCoord, get_constellation
+from astropy.time import Time
+
+# ---------------------------- Defaults ----------------------------
+
+STAR_DOTS_BRIGHT = [
+    {"latitude":  7.0, "longitude": -72.0},
+    {"latitude": 21.0, "longitude": -33.0},
+    {"latitude": -5.0, "longitude":  14.0},
 ]
 
-# --- Astro utilities ----------------------------------------------------------
-def _wrap_angle_deg(x: float) -> float:
-    """Wrap to [0, 360)."""
-    return x % 360.0
+# Asterism definitions (ICRS RA/Dec for key component stars)
+ASTERISMS_DEF = [
+    {"name":"Orion's Belt","parent":"Orion","kind":"line",
+     "components_icrs_deg":[(83.0017,-0.2991),(84.0534,-1.2019),(85.1897,-1.9426)]},
+    {"name":"Pleiades","parent":"Taurus","kind":"cluster",
+     "components_icrs_deg":[(56.8711,24.1052),(56.75,24.2),(56.95,24.0)]},
+    {"name":"Big Dipper","parent":"Ursa Major","kind":"line",
+     "components_icrs_deg":[(165.460,61.751),(165.931,56.382),(178.457,53.694),
+                            (183.856,57.032),(193.507,55.959),(200.981,54.925),(206.885,49.313)]},
+    {"name":"Summer Triangle","parent":"Aquila/Lyra/Cygnus","kind":"triangle",
+     "components_icrs_deg":[(279.2347,38.7837),(310.3579,45.2803),(297.6958,8.8683)]},
+    {"name":"Northern Cross","parent":"Cygnus","kind":"line",
+     "components_icrs_deg":[(310.3579,45.2803),(305.557,40.2567),(292.68,33.9670)]},
+]
 
-def _wrap_lon_deg_180(x: float) -> float:
-    """Wrap longitude to [-180, 180], east-positive."""
-    x = ((x + 180.0) % 360.0) - 180.0
-    return x
+# Coarse sampling grid to approximate constellation centroids in ICRS
+DEFAULT_RA_STEP_DEG  = 8.0
+DEFAULT_DEC_STEP_DEG = 8.0
+DEFAULT_DEC_MIN_DEG  = -80.0
+DEFAULT_DEC_MAX_DEG  =  80.0
 
-def _julian_date(dt: datetime) -> float:
-    """UTC datetime -> Julian Date."""
-    # Algorithm from "Astronomical Algorithms" (Meeus) simplified for Gregorian dates.
-    if dt.tzinfo is None:
-        dt = dt.replace(tzinfo=timezone.utc)
-    dt = dt.astimezone(timezone.utc)
-    year = dt.year
-    month = dt.month
-    day = dt.day + (dt.hour + (dt.minute + dt.second/60.0)/60.0)/24.0
+# Visual sizing (kept stable; the app controls look)
+BASE_RADIUS_M       = 300_000.0
+ALT_SCALE_M_PER_DEG =   5_000.0  # we use a constant below to keep stable ring size
 
-    if month <= 2:
-        year -= 1
-        month += 12
-    A = year // 100
-    B = 2 - A + (A // 4)
-    JD = int(365.25 * (year + 4716)) + int(30.6001 * (month + 1)) + day + B - 1524.5
-    return JD
+# ---------------------------- Helpers -----------------------------
 
-def _gmst_deg(dt: datetime) -> float:
-    """Greenwich Mean Sidereal Time (degrees) at UTC datetime."""
-    JD = _julian_date(dt)
-    T = (JD - 2451545.0) / 36525.0
-    gmst = 280.46061837 + 360.98564736629 * (JD - 2451545.0) + 0.000387933 * T*T - (T**3)/38710000.0
-    return _wrap_angle_deg(gmst)
+def iso_z(dt: datetime) -> str:
+    return dt.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
 
-def subpoint_for_icrs(ra_deg: float, dec_deg: float, dt: datetime) -> Dict[str, float]:
-    """
-    Compute Earth sub-point (lat, lon) for object with ICRS coordinates at UTC datetime dt.
-    - Latitude equals declination (neglecting nutation/polar motion): lat = dec.
-    - Longitude is where local sidereal time equals RA: lon = RA - GMST (wrapped to [-180, 180]).
-    Returns: {"lat": ..., "lon": ...} with east-positive longitude degrees.
-    """
-    gmst = _gmst_deg(dt)  # in degrees
-    lon = _wrap_lon_deg_180(ra_deg - gmst)
-    lat = max(-90.0, min(90.0, dec_deg))
-    return {"lat": lat, "lon": lon}
+def parse_snapshot(s: Optional[str]) -> datetime:
+    if not s:
+        return datetime.now(timezone.utc)
+    # accept ...Z or offset form
+    return datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(timezone.utc)
 
-# --- Builder -----------------------------------------------------------------
-def parse_hours(s: str | None) -> List[int]:
-    if not s or s.strip() == "":
-        return list(range(24))
-    parts = [p.strip() for p in s.split(",")]
-    hours: List[int] = []
-    for p in parts:
-        if p == "":
-            continue
-        try:
-            h = int(p)
-        except ValueError:
-            raise SystemExit(f"Bad hour '{p}'. Use integers 0..23 separated by commas.")
-        if not (0 <= h <= 23):
-            raise SystemExit(f"Hour out of range: {h}. Must be 0..23.")
-        hours.append(h)
-    # preserve order but unique
-    seen = set()
-    ordered = []
-    for h in hours:
-        if h not in seen:
-            seen.add(h)
-            ordered.append(h)
-    return ordered
+def sky_grid_icrs(ra_step_deg: float, dec_step_deg: float,
+                  dec_min_deg: float, dec_max_deg: float) -> SkyCoord:
+    ras  = np.arange(0.0, 360.0 + 1e-9, ra_step_deg)
+    decs = np.arange(dec_min_deg, dec_max_deg + 1e-9, dec_step_deg)
+    RA, DEC = np.meshgrid(ras, decs)
+    return SkyCoord(ra=RA.flatten()*u.deg, dec=DEC.flatten()*u.deg, frame="icrs")
 
-def hour_datetimes_on_snapshot(snapshot_utc: datetime, hours: List[int]) -> List[datetime]:
-    # Use the snapshot's calendar date in UTC; replace hour with each requested hour.
-    base = snapshot_utc.astimezone(timezone.utc).replace(minute=0, second=0, microsecond=0)
-    date_only = base.date()
-    dts = [datetime(date_only.year, date_only.month, date_only.day, h, tzinfo=timezone.utc) for h in hours]
-    return dts
+def mean_radec_deg(points: List[Tuple[float, float]]) -> Tuple[float, float]:
+    # average on unit sphere to avoid 0/360 wrap issues
+    ra = np.radians([p[0] for p in points])
+    dec = np.radians([p[1] for p in points])
+    x = np.cos(dec)*np.cos(ra); y = np.cos(dec)*np.sin(ra); z = np.sin(dec)
+    x_m, y_m, z_m = np.mean(x), np.mean(y), np.mean(z)
+    r = (x_m*x_m + y_m*y_m + z_m*z_m) ** 0.5
+    x_m, y_m, z_m = x_m/r, y_m/r, z_m/r
+    ra_c  = (np.degrees(np.arctan2(y_m, x_m)) + 360.0) % 360.0
+    dec_c = np.degrees(np.arcsin(z_m))
+    return float(ra_c), float(dec_c)
 
-def build_items(snapshot_utc: datetime,
-                include_asterisms: bool,
-                add_footprints: bool,
-                hours: List[int],
-                center_hour: int,
-                radius_meters: float) -> List[Dict[str, Any]]:
-    items: List[Dict[str, Any]] = []
-    dts = hour_datetimes_on_snapshot(snapshot_utc, hours) if add_footprints else []
-    # We compute center using center_hour on the same snapshot date:
-    center_dt = hour_datetimes_on_snapshot(snapshot_utc, [center_hour])[0] if add_footprints or (center_hour in range(24)) else snapshot_utc
+def constellation_centroids(ra_step_deg: float, dec_step_deg: float,
+                            dec_min_deg: float, dec_max_deg: float) -> Dict[str, Tuple[float, float]]:
+    grid = sky_grid_icrs(ra_step_deg, dec_step_deg, dec_min_deg, dec_max_deg)
+    labels = [get_constellation(pt) for pt in grid]
+    buckets: Dict[str, List[int]] = {}
+    for i, nm in enumerate(labels):
+        buckets.setdefault(nm.strip(), []).append(i)
+    cents: Dict[str, Tuple[float, float]] = {}
+    for nm, idxs in buckets.items():
+        pts = [(float(grid.ra[i].degree), float(grid.dec[i].degree)) for i in idxs]
+        cents[nm] = mean_radec_deg(pts)
+    return cents
 
-    for row in CATALOG:
-        if row.get("type") == "asterism" and not include_asterisms:
-            continue
-        name = row["name"]
-        typ = row.get("type", "constellation")
-        ra = float(row["ra_deg"])
-        dec = float(row["dec_deg"])
+def subpoint_for_ra_dec(ra_deg: float, dec_deg: float, snapshot_utc: datetime) -> Tuple[float, float]:
+    """Return (lat, lon) of the Earth sub-point for a sky position at snapshot_utc."""
+    t = Time(snapshot_utc)
+    gst_hours = float(t.sidereal_time("mean", "greenwich").hour)
+    lon = ((ra_deg/15.0 - gst_hours) * 15.0 + 180.0) % 360.0 - 180.0
+    lat = dec_deg
+    return float(lat), float(lon)
 
-        # ICRS block
-        icrs = {"ra_deg": ra, "dec_deg": dec}
-
-        # Center (legacy): sub-point at chosen hour
-        center = subpoint_for_icrs(ra, dec, center_dt)
-
-        # Optional hourly footprint
-        footprint = None
-        if add_footprints:
-            points = [subpoint_for_icrs(ra, dec, dt) for dt in dts]
-            footprint = {"hours_utc": hours, "points": points}
-
-        item: Dict[str, Any] = {
-            "name": name,
-            "type": typ,
-            "icrs": icrs,
-            "center": center,
-            "radiusMeters": float(radius_meters),
-            "meta": {"source": "catalog_demo", "notes": "Replace CATALOG with your true data"},
-        }
-        if footprint:
-            item["footprint"] = footprint
-
-        items.append(item)
-    return items
+# --------------------------- Generator ----------------------------
 
 def build_overlay(snapshot_utc: datetime,
-                  include_asterisms: bool,
-                  add_footprints: bool,
-                  hours: List[int],
-                  center_hour: int,
-                  radius_meters: float) -> Dict[str, Any]:
+                  ra_step_deg: float, dec_step_deg: float,
+                  dec_min_deg: float, dec_max_deg: float,
+                  include_asterisms: bool) -> dict:
+    """
+    Build overlay with:
+      - items[] for all 88 constellations:
+          name, center{lat,lon}, radiusMeters, icrs{ra_deg, dec_deg}
+      - optional asterisms[] similarly with icrs from their components
+    """
+    cents = constellation_centroids(ra_step_deg, dec_step_deg, dec_min_deg, dec_max_deg)
+    items = []
+
+    # constant-ish ring size (keep UI stable)
+    ring_m = BASE_RADIUS_M + ALT_SCALE_M_PER_DEG * 60.0
+
+    for name, (ra_deg, dec_deg) in cents.items():
+        lat, lon = subpoint_for_ra_dec(ra_deg, dec_deg, snapshot_utc)
+        item = {
+            "name": name,
+            "center": {"latitude": lat, "longitude": lon},
+            "radiusMeters": ring_m,
+            "icrs": {"ra_deg": round(ra_deg, 3), "dec_deg": round(dec_deg, 3)},  # ← NEW
+            "meta": {"visibilityTonight": {  # kept for back-compat; clients may ignore
+                "visible": True,
+                "max_alt_deg": 90.0,
+                "max_alt_time_utc": iso_z(snapshot_utc),
+                "zenith_sep_deg": 0.0,
+                "hours_local": []
+            }}
+        }
+        items.append(item)
+
     payload = {
-        "generated_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "snapshot_utc": snapshot_utc.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "footprints": bool(add_footprints),
-        "hours_utc": hours if add_footprints else None,
-        "items": build_items(snapshot_utc, include_asterisms, add_footprints, hours, center_hour, radius_meters),
+        "version": "overlay.v1",
+        "generated_at_utc": iso_z(snapshot_utc),
+        "items": sorted(items, key=lambda it: it["center"]["longitude"]),
+        "starDots": {"bright": STAR_DOTS_BRIGHT}
     }
-    if payload["hours_utc"] is None:
-        del payload["hours_utc"]
+
+    if include_asterisms:
+        ast_items = []
+        for a in ASTERISMS_DEF:
+            ra_c, dec_c = mean_radec_deg(a["components_icrs_deg"])
+            lat, lon = subpoint_for_ra_dec(ra_c, dec_c, snapshot_utc)
+            ast_items.append({
+                "name": a["name"],
+                "parent": a["parent"],
+                "kind": a["kind"],
+                "center": {"latitude": lat, "longitude": lon},
+                "icrs": {"ra_deg": round(ra_c, 3), "dec_deg": round(dec_c, 3)},   # ← NEW
+                "meta": {"visibilityTonight": {
+                    "visible": True,
+                    "hours_local": [],
+                    "max_alt_deg": 90.0,
+                    "max_alt_time_utc": iso_z(snapshot_utc),
+                    "zenith_sep_deg": 0.0
+                }}
+            })
+        payload["asterisms"] = sorted(ast_items, key=lambda it: it["center"]["longitude"])
+
     return payload
 
-# --- CLI ---------------------------------------------------------------------
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate constellation overlay JSON with ICRS and optional footprints.")
-    parser.add_argument("--snapshot-utc", type=str, default=None,
-                        help="Snapshot UTC timestamp (ISO 8601, e.g., 2025-10-10T03:00:00Z). Default: now (floored to hour).")
-    parser.add_argument("--include-asterisms", action="store_true", help="Include asterisms from the catalog.")
-    parser.add_argument("--footprints", action="store_true", help="Include hourly sub-point footprints.")
-    parser.add_argument("--hours", type=str, default=None, help="Comma list of UTC hours, e.g. \"16,17,18,19,20,21,22,23,0,1,2,3\". Default: 0..23.")
-    parser.add_argument("--center-hour", type=int, default=None, help="UTC hour to compute the legacy 'center'. Default: first hour from --hours (or 0).")
-    parser.add_argument("--radius-meters", type=float, default=150000.0, help="Legacy radiusMeters value per item.")
-    parser.add_argument("--out", type=str, default="overlay.json", help="Output JSON path.")
+# ----------------------------- Main -------------------------------
 
-    args = parser.parse_args()
+def main():
+    ap = argparse.ArgumentParser(description="Generate constellation overlay JSON (Earth sub-points + ICRS).")
+    ap.add_argument("--snapshot-utc", type=str, default=None,
+                    help="UTC like 2025-10-10T03:00:00Z (default: now)")
+    ap.add_argument("--ra-step",  type=float, default=DEFAULT_RA_STEP_DEG,
+                    help="sky sampling RA step (deg) for centroid approx")
+    ap.add_argument("--dec-step", type=float, default=DEFAULT_DEC_STEP_DEG,
+                    help="sky sampling Dec step (deg) for centroid approx")
+    ap.add_argument("--dec-min",  type=float, default=DEFAULT_DEC_MIN_DEG)
+    ap.add_argument("--dec-max",  type=float, default=DEFAULT_DEC_MAX_DEG)
+    ap.add_argument("--include-asterisms", action="store_true")
+    ap.add_argument("--out", type=str, default="out/overlay.json")
+    args = ap.parse_args()
 
-    # Parse snapshot time (UTC)
-    if args.snapshot_utc:
-        try:
-            if args.snapshot_utc.endswith("Z"):
-                snapshot = datetime.strptime(args.snapshot_utc, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-            else:
-                snapshot = datetime.fromisoformat(args.snapshot_utc)
-                if snapshot.tzinfo is None:
-                    snapshot = snapshot.replace(tzinfo=timezone.utc)
-                snapshot = snapshot.astimezone(timezone.utc)
-        except Exception as e:
-            raise SystemExit(f"Bad --snapshot-utc value: {e}")
-    else:
-        # Default to now, floored to the hour.
-        now = datetime.now(timezone.utc)
-        snapshot = now.replace(minute=0, second=0, microsecond=0)
+    snapshot_utc = parse_snapshot(args.snapshot_utc)
 
-    hours = parse_hours(args.hours)
-    center_hour = args.center_hour if args.center_hour is not None else (hours[0] if hours else 0)
+    payload = build_overlay(snapshot_utc,
+                            args.ra_step, args.dec_step,
+                            args.dec_min, args.dec_max,
+                            args.include_asterisms)
 
-    payload = build_overlay(snapshot_utc=snapshot,
-                            include_asterisms=args.include_asterisms,
-                            add_footprints=args.footprints,
-                            hours=hours,
-                            center_hour=center_hour,
-                            radius_meters=args.radius_meters)
-
-    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
-    with open(args.out, "w", encoding="utf-8") as f:
+    out_path = args.out
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    with open(out_path, "w") as f:
         json.dump(payload, f, indent=2)
-    print(f"✅ Wrote {args.out} for snapshot {payload['snapshot_utc']} (generated {payload['generated_at_utc']}).")
+    print(f"✅ wrote {out_path} at {payload['generated_at_utc']}")
 
 if __name__ == "__main__":
     main()
