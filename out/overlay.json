@@ -1,75 +1,12 @@
 {
   "version": "overlay.v1",
-  "generated_at_utc": "2026-05-30T06:23:23.394460Z",
+  "generated_at_utc": "2026-05-31T06:57:24.564471Z",
   "items": [
-    {
-      "name": "Chamaleon",
-      "center": {
-        "latitude": -81.10309889917112,
-        "longitude": -179.63227388227824
-      },
-      "radiusMeters": 600000.0,
-      "icrs": {
-        "ra_deg": 164.0,
-        "dec_deg": -81.103
-      },
-      "meta": {
-        "visibilityTonight": {
-          "visible": true,
-          "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
-          "zenith_sep_deg": 0.0,
-          "hours_local": []
-        }
-      }
-    },
-    {
-      "name": "Ursa Major",
-      "center": {
-        "latitude": 57.925362948044565,
-        "longitude": -178.4957333367656
-      },
-      "radiusMeters": 600000.0,
-      "icrs": {
-        "ra_deg": 165.137,
-        "dec_deg": 57.925
-      },
-      "meta": {
-        "visibilityTonight": {
-          "visible": true,
-          "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
-          "zenith_sep_deg": 0.0,
-          "hours_local": []
-        }
-      }
-    },
-    {
-      "name": "Crater",
-      "center": {
-        "latitude": -16.03706374099387,
-        "longitude": -171.63227388227824
-      },
-      "radiusMeters": 600000.0,
-      "icrs": {
-        "ra_deg": 172.0,
-        "dec_deg": -16.037
-      },
-      "meta": {
-        "visibilityTonight": {
-          "visible": true,
-          "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
-          "zenith_sep_deg": 0.0,
-          "hours_local": []
-        }
-      }
-    },
     {
       "name": "Corvus",
       "center": {
         "latitude": -18.70273421795923,
-        "longitude": -156.92262030584956
+        "longitude": -166.43642746271087
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -80,7 +17,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -90,7 +27,7 @@
       "name": "Musca",
       "center": {
         "latitude": -72.20472995989934,
-        "longitude": -155.63227388227824
+        "longitude": -165.14608103913952
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -101,7 +38,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -111,7 +48,7 @@
       "name": "Crux",
       "center": {
         "latitude": -60.060472230968024,
-        "longitude": -155.63227388227824
+        "longitude": -165.14608103913952
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -122,7 +59,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -132,7 +69,7 @@
       "name": "Coma Berenices",
       "center": {
         "latitude": 21.84378969402826,
-        "longitude": -152.684217108974
+        "longitude": -162.1980242658353
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -143,7 +80,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -153,7 +90,7 @@
       "name": "Canes Venatici",
       "center": {
         "latitude": 40.289444735714866,
-        "longitude": -147.34952741294052
+        "longitude": -156.86333456980182
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -164,7 +101,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -174,7 +111,7 @@
       "name": "Centaurus",
       "center": {
         "latitude": -47.85368582154014,
-        "longitude": -146.56825073832152
+        "longitude": -156.08205789518283
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -185,7 +122,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -195,7 +132,7 @@
       "name": "Virgo",
       "center": {
         "latitude": -2.2802828800114225,
-        "longitude": -145.87905419065825
+        "longitude": -155.39286134751956
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -206,7 +143,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -216,7 +153,7 @@
       "name": "Bo\u00f6tes",
       "center": {
         "latitude": 27.946531577471653,
-        "longitude": -124.80864358530583
+        "longitude": -134.32245074216712
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -227,7 +164,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -237,7 +174,7 @@
       "name": "Circinus",
       "center": {
         "latitude": -58.72184676715823,
-        "longitude": -116.76033177359602
+        "longitude": -126.27413893045731
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -248,7 +185,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -258,7 +195,7 @@
       "name": "Libra",
       "center": {
         "latitude": -16.156454823145573,
-        "longitude": -115.53565028276567
+        "longitude": -125.04945743962696
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -269,7 +206,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -279,7 +216,7 @@
       "name": "Ursa Minor",
       "center": {
         "latitude": 76.64394220009358,
-        "longitude": -115.04385846167682
+        "longitude": -124.55766561853811
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -290,7 +227,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -300,7 +237,7 @@
       "name": "Lupus",
       "center": {
         "latitude": -41.40789391391216,
-        "longitude": -112.21680600976579
+        "longitude": -121.73061316662708
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -311,7 +248,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -321,7 +258,7 @@
       "name": "Corona Borealis",
       "center": {
         "latitude": 32.06283223102342,
-        "longitude": -107.63227388227827
+        "longitude": -117.14608103913957
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -332,7 +269,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -342,7 +279,7 @@
       "name": "Triangulum Australe",
       "center": {
         "latitude": -64.14664707868641,
-        "longitude": -103.63227388227824
+        "longitude": -113.14608103913953
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -353,7 +290,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -363,7 +300,7 @@
       "name": "Apus",
       "center": {
         "latitude": -76.5841796062668,
-        "longitude": -102.28746803187256
+        "longitude": -111.80127518873385
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -374,7 +311,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -384,7 +321,7 @@
       "name": "Norma",
       "center": {
         "latitude": -52.06777445816242,
-        "longitude": -99.6322738822783
+        "longitude": -109.1460810391396
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -395,7 +332,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -405,7 +342,7 @@
       "name": "Serpens",
       "center": {
         "latitude": 6.2958310000092785,
-        "longitude": -95.62650867645443
+        "longitude": -105.14031583331573
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -416,7 +353,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -426,7 +363,7 @@
       "name": "Draco",
       "center": {
         "latitude": 70.8528544101679,
-        "longitude": -92.41117318298235
+        "longitude": -101.92498033984364
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -437,7 +374,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -447,7 +384,7 @@
       "name": "Scorpius",
       "center": {
         "latitude": -34.575618350214,
-        "longitude": -90.16664514987153
+        "longitude": -99.68045230673282
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -458,7 +395,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -468,7 +405,7 @@
       "name": "Ophiucus",
       "center": {
         "latitude": -6.461998583015874,
-        "longitude": -84.92872685091265
+        "longitude": -94.44253400777396
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -479,7 +416,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -489,7 +426,7 @@
       "name": "Hercules",
       "center": {
         "latitude": 31.565603286497865,
-        "longitude": -83.78739288205813
+        "longitude": -93.30120003891942
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -500,7 +437,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -510,7 +447,7 @@
       "name": "Ara",
       "center": {
         "latitude": -55.16142525156105,
-        "longitude": -80.4032773921436
+        "longitude": -89.91708454900488
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -521,7 +458,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -531,7 +468,7 @@
       "name": "Corona Australis",
       "center": {
         "latitude": -40.183741399627394,
-        "longitude": -63.63227388227821
+        "longitude": -73.14608103913952
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -542,7 +479,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -552,7 +489,7 @@
       "name": "Scutum",
       "center": {
         "latitude": -8.0,
-        "longitude": -63.63227388227821
+        "longitude": -73.14608103913952
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -563,7 +500,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -573,7 +510,7 @@
       "name": "Lyra",
       "center": {
         "latitude": 36.066475262469574,
-        "longitude": -59.63227388227823
+        "longitude": -69.14608103913952
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -584,7 +521,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -594,7 +531,7 @@
       "name": "Sagittarius",
       "center": {
         "latitude": -27.063089394805285,
-        "longitude": -56.506390039956514
+        "longitude": -66.0201971968178
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -605,7 +542,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -615,7 +552,7 @@
       "name": "Telescopium",
       "center": {
         "latitude": -52.33912781052116,
-        "longitude": -51.63227388227824
+        "longitude": -61.146081039139546
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -626,7 +563,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -636,7 +573,7 @@
       "name": "Aquila",
       "center": {
         "latitude": 2.9227174145353323,
-        "longitude": -48.34218460331928
+        "longitude": -57.855991760180586
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -647,7 +584,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -657,7 +594,7 @@
       "name": "Pavo",
       "center": {
         "latitude": -68.40374312508712,
-        "longitude": -46.11581537514587
+        "longitude": -55.629622532007176
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -668,7 +605,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -678,7 +615,7 @@
       "name": "Vulpecula",
       "center": {
         "latitude": 24.419544549806655,
-        "longitude": -39.63227388227824
+        "longitude": -49.146081039139546
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -689,7 +626,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -699,7 +636,7 @@
       "name": "Cygnus",
       "center": {
         "latitude": 43.40938132705002,
-        "longitude": -35.1270629471648
+        "longitude": -44.64087010402608
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -710,7 +647,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -720,7 +657,7 @@
       "name": "Delphinus",
       "center": {
         "latitude": 13.363017802902018,
-        "longitude": -34.2704280440654
+        "longitude": -43.7842352009267
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -731,7 +668,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -741,7 +678,7 @@
       "name": "Microscopium",
       "center": {
         "latitude": -36.066475262469574,
-        "longitude": -27.63227388227824
+        "longitude": -37.14608103913952
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -752,7 +689,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -762,7 +699,7 @@
       "name": "Capricornus",
       "center": {
         "latitude": -20.22605193029682,
-        "longitude": -27.63227388227824
+        "longitude": -37.14608103913952
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -773,7 +710,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -783,7 +720,7 @@
       "name": "Equuleus",
       "center": {
         "latitude": 8.0,
-        "longitude": -23.63227388227824
+        "longitude": -33.146081039139546
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -794,7 +731,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -804,7 +741,7 @@
       "name": "Indus",
       "center": {
         "latitude": -60.7659030742713,
-        "longitude": -20.69229342606056
+        "longitude": -30.206100582921863
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -815,7 +752,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -825,7 +762,7 @@
       "name": "Octans",
       "center": {
         "latitude": -81.0289837998777,
-        "longitude": -20.20223783639142
+        "longitude": -29.716044993252694
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -836,7 +773,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -846,7 +783,7 @@
       "name": "Aquarius",
       "center": {
         "latitude": -10.760783663282659,
-        "longitude": -9.319956567553959
+        "longitude": -18.833763724415263
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -857,7 +794,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -867,7 +804,7 @@
       "name": "Pisces Austrinus",
       "center": {
         "latitude": -32.16783809218905,
-        "longitude": -7.632273882278241
+        "longitude": -17.146081039139546
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -878,7 +815,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -888,7 +825,7 @@
       "name": "Grus",
       "center": {
         "latitude": -47.1706329718894,
-        "longitude": -6.805136677371337
+        "longitude": -16.31894383423264
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -899,7 +836,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -909,7 +846,7 @@
       "name": "Cepheus",
       "center": {
         "latitude": 74.5204779148747,
-        "longitude": -4.747601027947297
+        "longitude": -14.261408184808602
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -920,7 +857,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -930,7 +867,7 @@
       "name": "Lacerta",
       "center": {
         "latitude": 48.0694782743494,
-        "longitude": -3.632273882278213
+        "longitude": -13.146081039139517
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -941,7 +878,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -951,7 +888,7 @@
       "name": "Pegasus",
       "center": {
         "latitude": 22.628662441299102,
-        "longitude": 0.2114058266387815
+        "longitude": -9.302401330222523
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -962,7 +899,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -972,7 +909,7 @@
       "name": "Tucana",
       "center": {
         "latitude": -67.76386021625146,
-        "longitude": 15.186207910454556
+        "longitude": 5.6724007535932515
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -983,7 +920,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -993,7 +930,7 @@
       "name": "Pisces",
       "center": {
         "latitude": 11.073417405374855,
-        "longitude": 22.207630344045185
+        "longitude": 12.69382318718391
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1004,7 +941,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1014,7 +951,7 @@
       "name": "Sculptor",
       "center": {
         "latitude": -32.456462483106705,
-        "longitude": 23.01491663349151
+        "longitude": 13.501109476630234
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1025,7 +962,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1035,7 +972,7 @@
       "name": "Phoenix",
       "center": {
         "latitude": -47.71669241321577,
-        "longitude": 23.790167070934217
+        "longitude": 14.276359914072941
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1046,7 +983,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1056,7 +993,7 @@
       "name": "Andromeda",
       "center": {
         "latitude": 41.75828441772241,
-        "longitude": 24.992856998745367
+        "longitude": 15.479049841884091
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1067,7 +1004,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1077,7 +1014,7 @@
       "name": "Cassiopeia",
       "center": {
         "latitude": 64.14431285745282,
-        "longitude": 32.59354140927098
+        "longitude": 23.079734252409708
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1088,7 +1025,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1098,7 +1035,7 @@
       "name": "Cetus",
       "center": {
         "latitude": -9.789478847430129,
-        "longitude": 37.10849849689674
+        "longitude": 27.594691340035467
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1109,7 +1046,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1119,7 +1056,7 @@
       "name": "Triangulum",
       "center": {
         "latitude": 32.16783809218906,
-        "longitude": 48.36772611772176
+        "longitude": 38.85391896086048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1130,7 +1067,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1140,7 +1077,7 @@
       "name": "Hydrus",
       "center": {
         "latitude": -74.76466598158,
-        "longitude": 52.18153622313389
+        "longitude": 42.667729066272614
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1151,7 +1088,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1161,7 +1098,7 @@
       "name": "Aries",
       "center": {
         "latitude": 20.120160714268305,
-        "longitude": 56.36772611772176
+        "longitude": 46.85391896086048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1172,7 +1109,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1182,7 +1119,7 @@
       "name": "Fornax",
       "center": {
         "latitude": -28.291180578908136,
-        "longitude": 60.36772611772176
+        "longitude": 50.85391896086048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1193,7 +1130,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1203,7 +1140,7 @@
       "name": "Horologium",
       "center": {
         "latitude": -53.34017471787428,
-        "longitude": 68.62803930977162
+        "longitude": 59.11423215291035
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1214,7 +1151,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1224,7 +1161,7 @@
       "name": "Perseus",
       "center": {
         "latitude": 44.876363027497334,
-        "longitude": 68.81343633854709
+        "longitude": 59.299629181685816
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1235,7 +1172,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1245,7 +1182,7 @@
       "name": "Eridanus",
       "center": {
         "latitude": -25.66392806622016,
-        "longitude": 71.94474598349098
+        "longitude": 62.4309388266297
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1256,7 +1193,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1266,7 +1203,7 @@
       "name": "Reticulum",
       "center": {
         "latitude": -61.38511170986022,
-        "longitude": 74.80786527745067
+        "longitude": 65.2940581205894
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1277,7 +1214,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1287,7 +1224,7 @@
       "name": "Taurus",
       "center": {
         "latitude": 18.529803655426846,
-        "longitude": 85.30361419355671
+        "longitude": 75.78980703669544
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1298,7 +1235,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1308,7 +1245,7 @@
       "name": "Caelum",
       "center": {
         "latitude": -36.0,
-        "longitude": 88.36772611772176
+        "longitude": 78.85391896086048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1319,7 +1256,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1329,7 +1266,7 @@
       "name": "Dorado",
       "center": {
         "latitude": -61.04691760135666,
-        "longitude": 90.84236764945177
+        "longitude": 81.32856049259044
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1340,7 +1277,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1350,7 +1287,7 @@
       "name": "Orion",
       "center": {
         "latitude": 4.031470597757756,
-        "longitude": 98.72407007943741
+        "longitude": 89.21026292257613
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1361,7 +1298,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1371,7 +1308,7 @@
       "name": "Mensa",
       "center": {
         "latitude": -77.73290394155632,
-        "longitude": 100.36772611772176
+        "longitude": 90.85391896086043
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1382,7 +1319,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1392,7 +1329,7 @@
       "name": "Lepus",
       "center": {
         "latitude": -20.04495350306864,
-        "longitude": 100.36772611772176
+        "longitude": 90.85391896086043
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1403,7 +1340,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1413,7 +1350,7 @@
       "name": "Pictor",
       "center": {
         "latitude": -53.98849395497563,
-        "longitude": 101.32635076780349
+        "longitude": 91.81254361094221
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1424,7 +1361,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1434,7 +1371,7 @@
       "name": "Columba",
       "center": {
         "latitude": -36.94906968567858,
-        "longitude": 102.66531885535176
+        "longitude": 93.15151169849048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1445,7 +1382,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1455,7 +1392,7 @@
       "name": "Auriga",
       "center": {
         "latitude": 42.64235318018317,
-        "longitude": 106.46297296608981
+        "longitude": 96.94916580922853
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1466,7 +1403,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1476,7 +1413,7 @@
       "name": "Camelopardalis",
       "center": {
         "latitude": 75.71236718531524,
-        "longitude": 109.31998944555795
+        "longitude": 99.80618228869668
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1487,7 +1424,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1497,7 +1434,7 @@
       "name": "Canis Major",
       "center": {
         "latitude": -24.05196585783449,
-        "longitude": 116.36772611772176
+        "longitude": 106.85391896086048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1508,7 +1445,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1518,7 +1455,7 @@
       "name": "Monoceros",
       "center": {
         "latitude": -2.0269815981411488,
-        "longitude": 120.3383161539362
+        "longitude": 110.82450899707487
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1529,7 +1466,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1539,7 +1476,7 @@
       "name": "Gemini",
       "center": {
         "latitude": 25.080087386328724,
-        "longitude": 125.62261091908238
+        "longitude": 116.1088037622211
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1550,7 +1487,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1560,7 +1497,7 @@
       "name": "Puppis",
       "center": {
         "latitude": -35.31142478126854,
-        "longitude": 129.44541674115726
+        "longitude": 119.93160958429598
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1571,7 +1508,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1581,7 +1518,7 @@
       "name": "Volans",
       "center": {
         "latitude": -72.20472995989934,
-        "longitude": 132.36772611772176
+        "longitude": 122.85391896086048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1592,7 +1529,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1602,7 +1539,7 @@
       "name": "Canis Minor",
       "center": {
         "latitude": 4.009735770097598,
-        "longitude": 132.36772611772176
+        "longitude": 122.85391896086048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1613,7 +1550,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1623,7 +1560,7 @@
       "name": "Lynx",
       "center": {
         "latitude": 49.37487657030485,
-        "longitude": 138.21783710144814
+        "longitude": 128.70402994458686
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1634,7 +1571,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1644,7 +1581,7 @@
       "name": "Cancer",
       "center": {
         "latitude": 19.630332282382398,
-        "longitude": 146.99635077807943
+        "longitude": 137.48254362121816
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1655,7 +1592,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1665,7 +1602,7 @@
       "name": "Pyxis",
       "center": {
         "latitude": -28.057964295257996,
-        "longitude": 148.36772611772176
+        "longitude": 138.85391896086048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1676,7 +1613,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1686,7 +1623,7 @@
       "name": "Carina",
       "center": {
         "latitude": -65.88363751591707,
-        "longitude": 149.68903823172275
+        "longitude": 140.17523107486147
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1697,7 +1634,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1707,7 +1644,7 @@
       "name": "Vela",
       "center": {
         "latitude": -49.98900697827747,
-        "longitude": 159.02480904656613
+        "longitude": 149.51100188970486
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1718,7 +1655,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1728,7 +1665,7 @@
       "name": "Antlia",
       "center": {
         "latitude": -36.17752252650312,
-        "longitude": 168.36772611772176
+        "longitude": 158.85391896086048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1739,7 +1676,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1749,7 +1686,7 @@
       "name": "Hydra",
       "center": {
         "latitude": -18.67134494008078,
-        "longitude": 170.8960421077502
+        "longitude": 161.38223495088891
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1760,7 +1697,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1770,7 +1707,7 @@
       "name": "Sextans",
       "center": {
         "latitude": -4.009735770097598,
-        "longitude": 172.36772611772176
+        "longitude": 162.85391896086048
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1781,7 +1718,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1791,7 +1728,7 @@
       "name": "Leo Minor",
       "center": {
         "latitude": 32.06271191125027,
-        "longitude": 172.5427905672127
+        "longitude": 163.02898341035143
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1802,7 +1739,7 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1812,7 +1749,7 @@
       "name": "Leo",
       "center": {
         "latitude": 16.300223425409577,
-        "longitude": 174.86258447620753
+        "longitude": 165.34877731934625
       },
       "radiusMeters": 600000.0,
       "icrs": {
@@ -1823,7 +1760,70 @@
         "visibilityTonight": {
           "visible": true,
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
+          "zenith_sep_deg": 0.0,
+          "hours_local": []
+        }
+      }
+    },
+    {
+      "name": "Chamaleon",
+      "center": {
+        "latitude": -81.10309889917112,
+        "longitude": 170.85391896086048
+      },
+      "radiusMeters": 600000.0,
+      "icrs": {
+        "ra_deg": 164.0,
+        "dec_deg": -81.103
+      },
+      "meta": {
+        "visibilityTonight": {
+          "visible": true,
+          "max_alt_deg": 90.0,
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
+          "zenith_sep_deg": 0.0,
+          "hours_local": []
+        }
+      }
+    },
+    {
+      "name": "Ursa Major",
+      "center": {
+        "latitude": 57.925362948044565,
+        "longitude": 171.9904595063731
+      },
+      "radiusMeters": 600000.0,
+      "icrs": {
+        "ra_deg": 165.137,
+        "dec_deg": 57.925
+      },
+      "meta": {
+        "visibilityTonight": {
+          "visible": true,
+          "max_alt_deg": 90.0,
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
+          "zenith_sep_deg": 0.0,
+          "hours_local": []
+        }
+      }
+    },
+    {
+      "name": "Crater",
+      "center": {
+        "latitude": -16.03706374099387,
+        "longitude": 178.85391896086048
+      },
+      "radiusMeters": 600000.0,
+      "icrs": {
+        "ra_deg": 172.0,
+        "dec_deg": -16.037
+      },
+      "meta": {
+        "visibilityTonight": {
+          "visible": true,
+          "max_alt_deg": 90.0,
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0,
           "hours_local": []
         }
@@ -1853,7 +1853,7 @@
       "kind": "line",
       "center": {
         "latitude": 56.51222598221586,
-        "longitude": -157.63296595688593
+        "longitude": -167.14677311374723
       },
       "icrs": {
         "ra_deg": 185.999,
@@ -1864,7 +1864,7 @@
           "visible": true,
           "hours_local": [],
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0
         }
       }
@@ -1875,7 +1875,7 @@
       "kind": "triangle",
       "center": {
         "latitude": 31.684659444016116,
-        "longitude": -48.133354780460195
+        "longitude": -57.647161937321485
       },
       "icrs": {
         "ra_deg": 295.499,
@@ -1886,7 +1886,7 @@
           "visible": true,
           "hours_local": [],
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0
         }
       }
@@ -1897,7 +1897,7 @@
       "kind": "line",
       "center": {
         "latitude": 40.08011866063746,
-        "longitude": -41.246855221227634
+        "longitude": -50.76066237808891
       },
       "icrs": {
         "ra_deg": 302.385,
@@ -1908,7 +1908,7 @@
           "visible": true,
           "hours_local": [],
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0
         }
       }
@@ -1919,7 +1919,7 @@
       "kind": "cluster",
       "center": {
         "latitude": 24.101755341015124,
-        "longitude": 73.22481132391437
+        "longitude": 63.71100416705309
       },
       "icrs": {
         "ra_deg": 56.857,
@@ -1930,7 +1930,7 @@
           "visible": true,
           "hours_local": [],
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0
         }
       }
@@ -1941,7 +1941,7 @@
       "kind": "line",
       "center": {
         "latitude": -1.148008053153754,
-        "longitude": 100.4491190301199
+        "longitude": 90.93531187325863
       },
       "icrs": {
         "ra_deg": 84.081,
@@ -1952,7 +1952,7 @@
           "visible": true,
           "hours_local": [],
           "max_alt_deg": 90.0,
-          "max_alt_time_utc": "2026-05-30T06:23:23.394460Z",
+          "max_alt_time_utc": "2026-05-31T06:57:24.564471Z",
           "zenith_sep_deg": 0.0
         }
       }
